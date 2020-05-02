@@ -10,7 +10,9 @@ const dishRouter = require('./routes/dishRouter');
 const hostname='localhost';
 const port=3000;
 
-
+/* when we use the body parser what happens is that for the incoming request the body of the incoming 
+                            request will be parsed and then added into the req object as req.body so the req.body  will give you
+                            access to  whatever is inside the body of the message*/
 
 const app =express();
 app.use(morgan('dev'));
