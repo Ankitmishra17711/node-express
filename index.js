@@ -3,18 +3,23 @@ const http= require('http');
 const morgan =require('morgan');
 const bodyParser= require('body-parser');
 
+
+const dishRouter = require('./routes/dishRouter');
 //npm install -g nodemon
 
 const hostname='localhost';
 const port=3000;
 
+
+
 const app =express();
 app.use(morgan('dev'));
-app.use(bodyParser.json()); // when we use the body parser what happens is that for the incoming request the body of the incoming 
-                            //request will be parsed and then added into the req object as req.body so the req.body  will give you
-                            // access to  whatever is inside the body of the message.
+app.use(bodyParser.json());
 
-app.all('/dishes',  (req,res,next) =>{
+
+ app.use('/dishes',dishRouter);
+
+/*app.all('/dishes',  (req,res,next) =>{
   res.statusCode=200;
   res.setHeader('Content-type','text/plain');
   next();
@@ -50,7 +55,7 @@ app.delete('/dishes',(req,res,next)=>{
   });
 
 
-  app.get('/dishes/:dishId',(req,res,next)=>{
+ /* app.get('/dishes/:dishId',(req,res,next)=>{
     res.end('will send details of the dish'
     +req.params.dishId +'to you');
     });
@@ -70,7 +75,7 @@ app.delete('/dishes',(req,res,next)=>{
     
     app.delete('/dishes/:dishId',(req,res,next)=>{
       res.end('Deleting dish :'+req.params.dishId);
-      });
+      });*/
 
 
 app.use(express.static(__dirname+'/public'));
