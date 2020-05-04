@@ -4,8 +4,10 @@ const morgan =require('morgan');
 const bodyParser= require('body-parser');
 
 
-const dishRouter = require('./routes/dishRouter');//1
- const promoRouter = require('./routes/promoRouter');//2
+const dishRouter = require('./routes/dishRouter');
+ const promoRouter = require('./routes/promoRouter');
+ const leaderRouter = require('./routes/leaderRouter');
+
 //npm install -g nodemon
 
 const hostname='localhost';
@@ -21,7 +23,8 @@ app.use(bodyParser.json());
 
 
  app.use('/dishes',dishRouter);
-app.use('/promotions', promoRouter);
+ app.use('/promotions', promoRouter);
+ app.use('/leaders', leaderRouter);
 
 
 
