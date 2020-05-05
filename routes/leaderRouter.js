@@ -58,7 +58,7 @@ leaderRouter.route('/')
       
       .put((req,res,next)=>{ 
         res.write('updating the leader:'+req.params.leaderId +'\n');
-        req.end('will update the leader :'+req.body.name+
+        res.end('will update the leader :'+req.body.name+
         'with details:' +req.body.description);
       })
       

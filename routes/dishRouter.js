@@ -58,7 +58,7 @@ dishRouter.route('/')
       
       .put((req,res,next)=>{ 
         res.write('updating the dish:'+req.params.dishId +'\n');
-        req.end('will update the dish :'+req.body.name+
+        res.end('will update the dish :'+req.body.name+
         'with details:' +req.body.description);
       })
       

@@ -59,7 +59,7 @@ promoRouter.route('/')
       .put((req,res,next)=>{ 
         
         res.write('updating the promotions:'+req.params.promoId +'\n');
-        req.end('will update the promotions :'+req.body.name+
+        res.end('will update the promotions :'+req.body.name+
         'with details:' +req.body.description);
       })
       

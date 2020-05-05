@@ -11,7 +11,7 @@ const dishRouter = require('./routes/dishRouter');
 //npm install -g nodemon
 
 const hostname='localhost';
-const port=3000;
+const port=4200;
 
 /* when we use the body parser what happens is that for the incoming request the body of the incoming 
                             request will be parsed and then added into the req object as req.body so the req.body  will give you
